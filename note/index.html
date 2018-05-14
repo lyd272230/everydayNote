@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*JSON copy ; deepCopy*/
+    let obj1={
+        x:1,
+        y:{
+            m:1
+        }
+    };
+    let obj2=JSON.parse(JSON.stringify(obj1));
+    console.log(obj2);
+
+    let mySymbol=Symbol();
+    let obj3={
+        x:1,
+        y:undefined,
+        z:function () {
+
+        },
+    };
+    obj3[mySymbol]=1;
+    console.log(obj3);
+    let obj4=JSON.parse(JSON.stringify(obj3));
+    console.log(obj4);
+    console.log(typeof obj4);
+
+    function deepCopy(data) {
+        let t=typeof data;
+        let o;
+        switch (t){
+            case 'array':
+                o=[];
+                break;
+            case 'object':
+                o={};
+                break;
+            default:
+                return data;
+        }
+        if (t==='array'){
+            for (let i = 0; i < data.length; i++) {
+                o.push(deepCopy(data[i]))
+            }
+        }else if(t==='object'){
+            for(let key in data){
+                o[key]=deepCopy(data[key])
+
+            }
+
+        }
+        return o;
+    }
+</script>
+</body>
+</html>
