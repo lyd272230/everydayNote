@@ -1,6 +1,6 @@
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 1，X-UA-Compatible是神马？
-
+文档：https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible
 
 X-UA-Compatible是IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页，在html的<head>标签中使用。
 可以在微软官方文档获取更多介绍。
@@ -64,3 +64,5 @@ EmulateIE7 模式通知 Windows Internet Explorer 使用 <!DOCTYPE> 指令确定
 标准模式指令以Windows Internet Explorer 7 标准模式显示，而 Quirks 模式指令以 IE5 模式显示。
 与 IE7 模式不同，EmulateIE7 模式遵循 <!DOCTYPE> 指令。对于多数网站来说，它是首选的兼容性模式。
 在现阶段，IE8 版本推向市场没有多久，份额不高。因此，考虑兼容旧版本的模式值得推荐。
+
+引用：http://zccst.iteye.com/blog/2162187
